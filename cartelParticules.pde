@@ -10,7 +10,7 @@ color fin;
 float amt = 0.0;
 color partColor;
 
-boolean flip=false;
+boolean flip=true;
 boolean french=true;
 String basename = "cartel1";
 
@@ -39,10 +39,7 @@ void setup() {
 void draw() {
   background(0);
 
-  if (flip) {
-    translate(width, height);
-    rotate(PI);
-  }
+  
 
 
   if (french) {
@@ -68,7 +65,7 @@ void draw() {
         value-=0.03;
       }
       else {
-        value-=3;
+        value-=5;
       }
       //println(value);
     }
@@ -84,19 +81,27 @@ void draw() {
       it.remove();
     }
   }
+  
+  
+ 
+  
 }
 
 void mouseDragged() {
 
-  particles.add(new Particle(new PVector(mouseX, mouseY)));
+  if (flip){
+    particles.add(new Particle(new PVector(width-mouseX, height-mouseY)));
+  }else{
+    particles.add(new Particle(new PVector(mouseX, mouseY)));
+  }
   consigne=false;
-  value = value + 1.5;
+  value = value + 20;
   if (value > 254) {
     value = 254;
   }
   //println (value + "--" + mouseX + " - "+emouseY);
-   println ("dragged");
-   
+  // println ("dragged");
+
 }
 
 void mouseReleased() {
@@ -111,7 +116,7 @@ void mouseReleased() {
     }
   }
   
-  println ("released");
+  //println ("released");
   consigne=true;
 }
 
