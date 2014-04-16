@@ -39,7 +39,10 @@ void setup() {
 void draw() {
   background(0);
 
-  
+   if (flip) {
+     translate(width, height);
+     rotate(PI);
+  }
 
 
   if (french) {
