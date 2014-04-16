@@ -107,11 +107,11 @@ void mouseDragged() {
 void mouseReleased() {
   
   if(!flip){
-  if (mouseX>466  && mouseX<579 && mouseY>20 && mouseY<87) {
+  if (mouseX>480  && mouseX<558 && mouseY>30 && mouseY<106) {
     french=!french;
   }
   }else{
-    if (mouseX>36  && mouseX<133 && mouseY>947 && mouseY<996) {
+    if (mouseX>36  && mouseX<104 && mouseY>916 && mouseY<996) {
     french=!french;
     }
   }
