@@ -12,7 +12,8 @@ color partColor;
 
 boolean flip=true;
 boolean french=true;
-String basename = "cartel1";
+boolean switchable=true;
+String basename = "cartel11";
 
 
 
@@ -60,17 +61,24 @@ void draw() {
 
   if (consigne) {
     fill(0);
-    if (value < 20) {
+    if (value < 170) {
+      
       //text("Frottez l’écran avec le doigt!", width/2, height-50);
+      switchable=true
+      
+    }else
+       switchable=false;
     }
+    
     if (value > 0) {
       if (value > 251) {
         value-=0.03;
       }
       else {
+        
         value-=5;
       }
-      //println(value);
+      println(value);
     }
   }
 
@@ -109,6 +117,7 @@ void mouseDragged() {
 
 void mouseReleased() {
   
+  if (switchable){
   if(!flip){
   if (mouseX>480  && mouseX<558 && mouseY>30 && mouseY<106) {
     french=!french;
@@ -117,6 +126,7 @@ void mouseReleased() {
     if (mouseX>36  && mouseX<104 && mouseY>916 && mouseY<996) {
     french=!french;
     }
+  }
   }
   
   //println ("released");
