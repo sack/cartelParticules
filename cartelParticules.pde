@@ -64,9 +64,9 @@ void draw() {
     if (value < 170) {
       
       //text("Frottez l’écran avec le doigt!", width/2, height-50);
-      switchable=true
+      switchable=true;
       
-    }else
+    }else{
        switchable=false;
     }
     
